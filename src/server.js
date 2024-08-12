@@ -1,0 +1,1 @@
+export const server = "https://hulu-ecommerce-web-app-back.onrender.com/api/v2";
