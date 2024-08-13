@@ -14,19 +14,19 @@ const ProductCard = ({ data }) => {
 
   return (
     <div className="w-full h-[325px] bg-white rounded-lg shadow-sm p-3 relative cursor-pointer">
-      <Link to={`/detail/${data.id}`}>
+      <Link to='/detail'>
         <img
-          src={hululogoo}
+          src={data.image} // Use the correct key for the image source
           alt={data.name}
           className="w-full h-[170px] object-contain"
         />
       </Link>
-      <Link to={`/detail/${data.id}`}>
+      <Link to='/detail/'>
         <h4 className="pb-3 font-medium text-gray-600">
           {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
         </h4>
       </Link>
-      <Link to={`/detail/${data.id}`}>
+      <Link to='/detail/'>
         <div className="flex">
           <AiFillStar className="mr-1 cursor-pointer" color="#000000" size={13} />
           <AiFillStar className="mr-1 cursor-pointer" color="#000000" size={13} />
@@ -37,7 +37,7 @@ const ProductCard = ({ data }) => {
         <div className="py-2 flex items-center justify-between">
           <div className="flex">
             <h5 className={`${styles.productDiscountPrice}`}>
-              USD {data.price === 0 ? data.price : data.discount_price}$
+              USD {data.discount_price !== 0 ? data.discount_price : data.price}$
             </h5>
           </div>
         </div>
@@ -49,5 +49,6 @@ const ProductCard = ({ data }) => {
     </div>
   );
 };
+
 
 export default ProductCard;

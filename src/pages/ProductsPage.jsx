@@ -24,23 +24,19 @@ const ProductsPage = () => {
 
   return (
     <>
-      <div>
-        <Header activeHeading={3} />
-        <br />
-        <br />
-        <BestDeals />
-        <div className={`${styles.section}`}>
-          <div className="grid grid-cols-2 gap-[20px] md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-12">
-            {data && data.map((i, index) => (
-              <ProductCard data={i} key={index} />
-            ))}
-          </div>
-          {data && data.length === 0 && (
-            <h1 className="text-center w-full pb-[100px] text-[20px]">
-              No products Found!
-            </h1>
-          )}
+      <Header activeHeading={3} />
+      <BestDeals />
+      <div className={`${styles.section}`}>
+        <div className="grid grid-cols-2 gap-[20px] md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-12">
+          {data && data.map((i, index) => (
+            <ProductCard data={i} key={index} />
+          ))}
         </div>
+        {data && data.length === 0 && (
+          <h1 className="text-center w-full pb-[100px] text-[20px]">
+            No products Found!
+          </h1>
+        )}
       </div>
     </>
   );
